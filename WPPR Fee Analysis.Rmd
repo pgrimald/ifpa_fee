@@ -69,7 +69,7 @@ states <- t %>% group_by(state) %>%
   summarize(Dollars = sum(player_count)*.75)
 states$state <- stateFromLower(states$state)
 
-states$dollar_bin <- cut(states$Dollars,breaks = c(0,320,1000,2000,3000,4000,5000,6000,7000,8000,9000),labels = c("0-220","220-1K","1-2K","2-3K","3-4K","4-5K","5-6K","6-7K","7-8K","8-9K")) 
+states$dollar_bin <- cut(states$Dollars,breaks = c(0,220,1000,2000,3000,4000,5000,6000,7000,8000,9000),labels = c("0-220","220-1K","1-2K","2-3K","3-4K","4-5K","5-6K","6-7K","7-8K","8-9K")) 
 states <- states %>% filter(!is.na(state)) #filter out mystery states
 
 
